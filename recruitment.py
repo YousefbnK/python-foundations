@@ -15,20 +15,8 @@ skill_1 = int(input("Choose a skill from the list by entering its number:  "))
 skill_2 = int(input("Choose another skill from above by entering its number:  "))
 
 
-print("Choose a skill from the list by entering its number: ", skill_1)
-print("Choose another skill from above by entering its number: ", skill_2)
-
-def user_entry(i, j):
-	if i or j == "1":
-		cv['skills'].append(skills[0])
-
-	elif i or j == "4":
-		cv['skills'].append(skills[3])
-
-	else:
-		cv['skills'].append(skills[skill_1, skill_2])
-
-user_entry(skill_1, skill_2)
+cv['skills'].append(skills[skill_1 - 1])
+cv['skills'].append(skills[skill_2 - 1])
 
 
 if (25 < cv['age'] < 40) and (cv['experience'] > 3):
