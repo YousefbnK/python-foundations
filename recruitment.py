@@ -1,4 +1,4 @@
-skills = ["Python", "Design", "Presentation", "Leadership"]
+skills = ["Python", "Design", "Presentation", "Leadership", "Selfies", "Eating"]
 cv = {}
 
 
@@ -24,7 +24,7 @@ if (25 < cv['age'] < 40) and (cv['experience'] > 3):
 		print("You have been accepted,", cv['name'])
 
 	else:
-		print("Unfortunately" cv['name'], "you do not fit the criteria. We wish you success.")
+		print("Unfortunately", cv['name'], "you do not fit the criteria. We wish you success.")
 
 
 
