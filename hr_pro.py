@@ -19,13 +19,16 @@ class Employee():
 		return "name: {}, Age: {}, Salary: {}, Working Years: {}".format(self.name, self.age, self.salary, self.get_working_years())
 		
 class Manager(Employee):
-	def __init__(self, bonus, mbonus):
+	def __init__(self, name, age, salary, employment_year, bonus):
 		super().__init__(name, age, salary, employment_year)
 		self.bonus = bonus
-		self.mbonus = self.salary * self.bonus
+
+	def get_bonus(self):
+		mbonus = self.salary * self.bonus
+		return mbonus
 
 	def __str__(self):
-		return "Name: {}, Age: {}, Salary: {}, Working Years: {}, Bonus: {}".format(self.name, self.age, self.salary, self.get_working_years(), self.mbonus)  
+		return "Name: {}, Age: {}, Salary: {}, Working Years: {}, Bonus: {}".format(self.name, self.age, self.salary, self.get_working_years(), self.get_bonus())  
 
 
 options = ["Show Employees", "Show Managers", "Add an Employee", "Add a Manager", "Exit"]
@@ -49,7 +52,8 @@ while stop == "no":
 			print(facts)
 
 	elif user_input == 2:
-		print(Manager.__str__())
+		for facts in managers:
+			print(facts)
 
 	elif user_input == 3:
 		name = input("Name: ")
@@ -67,7 +71,7 @@ while stop == "no":
 		employment_year = int(input("Employment year: "))
 		bonus = float(input("Bonus Percentge: "))
 
-		Manager(name, age, salary, employment_year, bonus)
+		managers.append(Manager(name, age, salary, employment_year, bonus))
 		print("Manager added successfully")
 
 	elif user_input == 5:
