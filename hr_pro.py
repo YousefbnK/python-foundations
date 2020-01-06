@@ -11,9 +11,7 @@ class Employee():
 		self.employment_year = employment_year
 
 	def get_working_years(self):
-		today = date.today()
-		working_years = today.year - self.employment_year
-		return working_years
+		return date.today().year - self.employment_year
 
 	def __str__(self):
 		return "name: {}, Age: {}, Salary: {}, Working Years: {}".format(self.name, self.age, self.salary, self.get_working_years())
@@ -24,8 +22,7 @@ class Manager(Employee):
 		self.bonus = bonus
 
 	def get_bonus(self):
-		mbonus = self.salary * self.bonus
-		return mbonus
+		return self.salary * self.bonus
 
 	def __str__(self):
 		return "Name: {}, Age: {}, Salary: {}, Working Years: {}, Bonus: {}".format(self.name, self.age, self.salary, self.get_working_years(), self.get_bonus())  
@@ -42,8 +39,8 @@ while stop == "no":
 	print("Options:")
 
 	for i in options:
-		print (options.index(i) +1, end=" ")
-		print ("", i)
+		# print (options.index(i) +1, i)
+		print(f"{options.index(i) +1}. {i}")
 
 	user_input = int(input("What would you like to do?  "))
 
